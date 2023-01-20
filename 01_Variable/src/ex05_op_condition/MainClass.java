@@ -104,7 +104,7 @@ public class MainClass {
 		// 이항 연산 (연산자하고 2개밖에 없는 연산 예 :   a + b  )
 		// 삼항 연산 (연산자하고 3개밖에 없는 연산 예 :  a + b + c )
 		
-		int score = 80;
+		int score = 40;
 		
 		String result = (score >= 60) ? "합격" : "불합격";
 		

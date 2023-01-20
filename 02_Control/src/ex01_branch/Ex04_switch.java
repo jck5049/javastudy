@@ -22,7 +22,11 @@ public class Ex04_switch {
 	 */
 	
 	
-	
+	//12월, 1월, 2월은 겨울입니다.
+	//3월,4월,5월은 봄입니다.
+	//6월 7월 8월은 여름입니다.
+	//그 외엔 가을입니다.
+	//6월의 계절을 출력하세요
 	
 	public static void ex01() {
 		
@@ -67,6 +71,7 @@ public class Ex04_switch {
 	
 	
 	
+	
 	public static void ex03() {
 		
 		// 수, 우, 미, 양, 가, 잘못된 점수
@@ -75,7 +80,10 @@ public class Ex04_switch {
 		
 		if(score < 0 | score > 100) {
 			System.out.println("잘못된 점수");
-			return;  // ex03 메소드를 종료하시오.
+			return; // ex03 메소드를 종료하시오.
+			
+			// return >> 메소드에 반환타입이 void가 아닐경우 return 이라는 코드를 마지막에 작성하기! 필수조건.
+			
 		}
 		
 		switch(score / 10) {
@@ -130,6 +138,7 @@ public class Ex04_switch {
 		switch((month - 1) / 3) {
 		case 0:
 			System.out.println("1분기");
+			
 			break;
 		case 1:
 			System.out.println("2분기");
