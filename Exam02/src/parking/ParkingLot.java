@@ -54,13 +54,33 @@ public class ParkingLot {
 			System.out.println("등록된 차량이 없습니다.");
 			return;
 		}
+		System.out.println("제거할 차량번호 >>> ");
+		String carNo = sc.next();
 		
 		for(int i = 0; i < idx; i++) {
-			if(cars[i].getCarNo() == Car[idx]) {
-				cars[i] = cars[--idx];		
-				break;
+			Car car = cars[i];
+			if(carNo.equals(car.getCarNo())) {
+				
+				// 방법 1. 삭제할 요소의 뒤에 있는 것들을 모두 한 칸씩 앞으로 옮기기(당기기)
+				
+				System.arraycopy(cars, i + 1, cars, i, idx - i - 1);
+				cars[--idx] = null;
+				System.out.println("차량번호 " + carNo + "인 차량이 삭제되었습니다.");
+				return;
+				/*
+				 
+				방법 2. 마지막 차량을 옮겨오기
+				
+				마지막 차량을 옮겨오기
+				제거할 차량의 위치 : i
+				마지막 차량의 위치 : idx - 1
+				cars[i] = cars[idx - 1];
+				cars[--idx] = null;
+				return;
+				*/
 			}
 		}
+			System.err.println("대상 차량이 존재하지 않습니다.");
 		
 		
 		
@@ -72,13 +92,32 @@ public class ParkingLot {
 			System.out.println("등록된 차량이 없습니다.");
 			return;
 		}
-		System.out.println(name);
-		
-		
-		
-		
+		System.out.println(name + "차량 목록");
+		for(int i = 0; i < idx; i++) {
+			Car car = cars[i];
+			System.out.println(car);
+		}
+		/*
+		 
+		for(int i = 0; i < cars.length; i++) {
+			Car car = cars[i];
+			if(car != null) {
+			System.out.println(car);
+		}
 		
 	}
+	
+		for(Car car : cars) {
+		if(car != null) {
+		System.out.println(car);
+		}
+	
+	]
+		 */
+		
+	}
+	
+	
 	
 	public void manage() {
 		

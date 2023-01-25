@@ -1,5 +1,7 @@
 package practice01;
 
+import java.util.Scanner;
+
 public class MainClass {
 
 	// 문제1. 가위바위보
@@ -11,6 +13,43 @@ public class MainClass {
 		
 		
 		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("가위바위보 >>> ");
+		String xStr = sc.next(); //내가 낸 것 (String)  //가위
+		int x = 0;               //내가 낸 것 (int)     //0
+		
+		if (xStr.equals("가위")) {
+			x = 0;
+		} else if(xStr.equals("보")) {
+			x = 2;
+		} else if(xStr.equals("바위")) {
+			x = 1;
+		}
+		
+		
+		int y = (int)(Math.random()*3);	// 컴퓨터가 낸것
+		String yStr = null;
+		if (y == 0) {
+			yStr = "가위";
+		} else if(y == 1) {
+			yStr = "바위";
+		} else if(y == 2) {
+			yStr = "보";
+		}
+		
+		if(x == y) {
+			System.out.println("당신은 " + xStr + ", 컴퓨터는 " + yStr + ", 비겼습니다.");
+		}
+		else if(x < y) {
+			System.out.println("당신은 " + xStr + ", 컴퓨터는 " + yStr + ", 졌습니다.");
+			
+		}else if(x > y) {
+			System.out.println("당신은 " + xStr + ", 컴퓨터는 " + yStr + ", 이겼습니다.");
+		}
+		sc.close();
+				
+		
+		
 		
 		
 		
@@ -20,12 +59,44 @@ public class MainClass {
 	// 새로 사귄 친구의 수를 입력 받아서 기존 친구들이 저장된 배열의 길이를 새로 사귄 친구의 수만큼 늘리시오.
 	public static void ex02() {
 		
+		String[] str1 = {"정동섭", "송인섭", "정병인"};
+		Scanner sc = new Scanner(System.in);
+		System.out.print("새로 사귈 친구 수를 입력해주세요 >> ");
+		int count = sc.nextInt();
+		String[] str2 = new String[str1.length + count];
+		for(int i = 0; i < str1.length; i++) {
+			str2[i] = str1[i];
+		}
+		
+		
+		str1 = str2;
+		
+		for(int i=0; i<str1.length; i++) {
+			System.out.println(str1[i]);
+		}
+		sc.close();
+		
+		
 	}
 	
 	// 문제3. Scanner 클래스의 next() 메소드를 이용해서 사용자로부터 문자열을 계속 입력 받는다.
 	// 사용자가 "종료" 문자열을 입력하면 더 이상 입력 받지 않는다.
 	// 총 몇 번만에 종료되었는지 그 횟수를 마지막에 출력한다.
 	public static void ex03() {
+		
+		int count = 0;
+		
+		Scanner sc = new Scanner(System.in);
+		String str = "";
+		
+		while(!str.equals("종료")) {
+			System.out.println("문자열 입력 >>> ");
+			str = sc.next();
+			count++; 
+			
+		}
+		System.out.println(count + " 종료횟수");
+		sc.close();
 		
 	}
 
@@ -38,11 +109,20 @@ public class MainClass {
 	// 오답입니다.
 	public static void ex04() {	
 		
+		
+		
+		
+		
+		
 	}
 	
 	// 문제5. 평점 입력 받아서 해당 평점만큼 ★을 출력하시오.
 	// 평점은 1 ~ 5 사이 정수로 입력 받는데, 벗어난 범위는 다시 입력 받는다.
 	public static void ex05() {
+		
+		
+		
+		
 		
 	}
 	
@@ -50,6 +130,10 @@ public class MainClass {
 	// 사용자로부터 비밀번호를 입력 받아서 "1234"와 같으면 "성공", "1234"가 아니면 다시 비밀번호를 입력 받도록 처리하시오.
 	// 비밀번호 입력은 최대 5번으로 제한하고, 5번의 입력이 모두 틀리면 최종적으로 "실패"를 출력하시오.
 	public static void ex06() {
+		
+		
+		
+		
 		
 	}		
 	
@@ -99,7 +183,7 @@ public class MainClass {
 	}
 	
 	public static void main(String[] args) {
-		ex10();
+		ex03();
 	}
 
 }

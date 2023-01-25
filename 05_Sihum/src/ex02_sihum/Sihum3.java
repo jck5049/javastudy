@@ -224,17 +224,18 @@ public class Sihum3 {
 		// 예시3)
 		// 3690초는 1시간 1분 30초입니다.
 		public static void ex10() {
-			int second = 3690;
+			int second = 90;
+			
 			if(second < 60) {
-				System.out.println(second + "는 " + second + "초입니다.");
+				System.out.println(second + "초는 " + second + "초입니다.");
 			} else if(second < 3600) {
-				System.out.println(second + "는 " + (second / 60) + "분 " + (second % 60) + "초입니다.");
+				System.out.println(second + "초는 " + (second / 60) + "분 " + (second % 60) + "초입니다.");
 			} else {
-				System.out.println(second + "는 " + (second / 3600) + "시간 " + (second % 3600 / 60) + "분 " + (second % 60) + "초입니다.");
+				System.out.println(second + "초는 " + (second / 3600) + "시간 " + (second % 3600 / 60) + "분 " + (second % 60) + "초입니다.");
 			}
 		}
 		
 		public static void main(String[] args) {
-			ex04();
+			ex09();
 		}
 }
