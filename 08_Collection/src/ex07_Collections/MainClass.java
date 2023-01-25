@@ -36,7 +36,7 @@ public class MainClass {
 		
 		// Collections.binarySearch(list, 4) 을 통해 정렬된 값의 배열의 길이를 찾을수있다.
 		
-		int idx = Collections.binarySearch(list, 4);	// 이진 검색
+		int idx = Collections.binarySearch(list, 4);	// 이진 검색(반드시 정렬이 되어 있어야 한다.)
 		if(idx >= 0) {
 			System.out.println("찾았다");
 		} else {

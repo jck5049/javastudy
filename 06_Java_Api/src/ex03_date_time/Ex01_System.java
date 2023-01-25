@@ -52,7 +52,7 @@ public class Ex01_System {
 	
 	
 	public static void main(String[] args) {
-		ex02();
+		ex01();
 
 	}
 
