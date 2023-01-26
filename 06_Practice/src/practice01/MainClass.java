@@ -61,7 +61,7 @@ public class MainClass {
 		
 		String[] str1 = {"정동섭", "송인섭", "정병인"};
 		Scanner sc = new Scanner(System.in);
-		System.out.print("새로 사귈 친구 수를 입력해주세요 >> ");
+		System.out.print("새로 사귈 친구 수를 입력해주세요 >>> ");
 		int count = sc.nextInt();
 		String[] str2 = new String[str1.length + count];
 		for(int i = 0; i < str1.length; i++) {
@@ -183,7 +183,7 @@ public class MainClass {
 	}
 	
 	public static void main(String[] args) {
-		ex03();
+		ex01();
 	}
 
 }
