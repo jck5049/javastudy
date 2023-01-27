@@ -18,7 +18,7 @@ public class WeekScheduler {
 	private void makeSchedule() {
 		System.out.println("▒▒▒ 등록 ▒▒▒");
 		System.out.print("요일 입력 >>> ");
-		String dayName = sc.next().substring(0, 1);
+		String dayName = sc.next().trim().substring(0, 1);
 		sc.nextLine();
 		for(int i = 0; i < week.length; i++) {
 			if(dayName.equals(dayNames[i])) {
