@@ -1,5 +1,6 @@
 package ex03_Reader;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -104,10 +105,67 @@ public class MainClass {
 	
 	
 	
+	public static void ex03() {
+		
+		/*
+		 	BufferedReader의 장점
+		 	1. 속도가 빠르다.
+		 	2. readLine 메소드를 사용할 수 있다.
+		 	
+		 */
+		
+		
+		File dir = new File("C:" + File.separator + "storage");
+		if(dir.exists() == false) {
+			dir.mkdirs();
+		}
+		File file = new File(dir, "ex03.txt");
+		
+		BufferedReader br = null;
+		
+		
+		try {
+			
+			br = new BufferedReader(new FileReader(file));
+			
+			String line = null;
+			StringBuilder sb = new StringBuilder();
+			while((line = br.readLine()) != null) {
+				sb.append(line);
+			}
+			
+			System.out.println(sb.toString());
+			
+		}catch(IOException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(br != null) {
+					br.close();
+				}
+			}catch(IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
+	
+	public static void ex04() {
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
 	
 	public static void main(String[] args) {
 		
-		ex02();
+		ex03();
 		
 		
 		
