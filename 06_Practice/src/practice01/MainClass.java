@@ -109,8 +109,21 @@ public class MainClass {
 	// 오답입니다.
 	public static void ex04() {	
 		
+		Scanner sc = new Scanner(System.in);
 		
 		
+		while(true) {
+			System.out.println("대한민국의 수도는? >>>");
+			String str = sc.next();
+			if(str.equals("서울") || str.equalsIgnoreCase("seoul")) {
+				System.out.println("정답입니다.");
+				break;
+			}else {
+				System.out.println("오답입니다.");
+			}
+			
+		}
+		sc.close();
 		
 		
 		
@@ -120,7 +133,22 @@ public class MainClass {
 	// 평점은 1 ~ 5 사이 정수로 입력 받는데, 벗어난 범위는 다시 입력 받는다.
 	public static void ex05() {
 		
+		Scanner sc = new Scanner(System.in);
+		int total = 0;
+		String star = "";
+		do {
+			System.out.println("평점을 입력하세요. >>> ");
+			total = sc.nextInt();
+			if(total <= 5) {
+				for(int i = 0; i < total; i++) {
+					star += "★";
+				}
+				System.out.println(star);
+			}
 		
+		}while(total > 5 || total < 1);
+			
+		sc.close();
 		
 		
 		
@@ -131,8 +159,29 @@ public class MainClass {
 	// 비밀번호 입력은 최대 5번으로 제한하고, 5번의 입력이 모두 틀리면 최종적으로 "실패"를 출력하시오.
 	public static void ex06() {
 		
+		Scanner sc = new Scanner(System.in);
+		int i = 0;
 		
+		int user = 0;
+		while(i < 5) {
+			
+			System.out.println("비밀번호를 입력하시오. >>> ");
+			user = sc.nextInt();
+			
+				
+				if(user == 1234) {
+					System.out.println("성공");
+					break;
+				}
+			i++;
+			
+		}
+		if(user != 1234) {
+			
+			System.out.println("실패");
+		}
 		
+		sc.close();
 		
 		
 	}		
@@ -148,6 +197,21 @@ public class MainClass {
 	// 땡
 	public static void ex07() {
 		
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int i = (int) (Math.random() * 8) + 2;
+		int j = (int) (Math.random() * 9) + 1;
+		
+		System.out.println(i + "x" +  j + " >>> ");
+		int result = sc.nextInt();
+		
+		if(i*j == result) {
+			System.out.println("정답");
+		}else {
+			System.out.println("땡");
+		}
+		sc.close();
 	}
 	
 	// 문제8. 임의의 주민등록번호(personalId)를 분석하여 나이와 성별을 출력하시오.
@@ -183,7 +247,7 @@ public class MainClass {
 	}
 	
 	public static void main(String[] args) {
-		ex01();
+		ex06();
 	}
 
 }
