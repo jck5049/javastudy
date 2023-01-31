@@ -221,6 +221,9 @@ public class MainClass {
 	// 28살 여자입니다.
 	public static void ex08() {
 		
+		
+		
+		
 	}
 	
 	// 문제9. 다음 기준에 따라서 파일명을 변환하시오.

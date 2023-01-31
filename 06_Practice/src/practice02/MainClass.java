@@ -1,5 +1,7 @@
 package practice02;
 
+import java.util.Scanner;
+
 public class MainClass {
 
 	// 문제1. 통장(balance)에 최초 5000원이 있다.
@@ -14,6 +16,16 @@ public class MainClass {
 	// 출금 전 1원, 6회 출금액 1원, 출금 후 0원
 	public static void ex01() {
 		
+		int balance = 5000;
+		int count = 0;
+		
+		while(balance > 0) {
+			
+			int random = (int) ((Math.random() * balance) + 1 );
+			count++;
+			
+			System.out.println("출금 전 " + balance + "원, " + count + "회 출금액 " + random + "원, 출금 후 " + (balance -= random) + "원");
+		}
 	}
 	
 	// 문제2. UpDown 게임
@@ -29,6 +41,28 @@ public class MainClass {
 	// 정답. 총 5번만에 성공.
 	public static void ex02() {
 		
+		Scanner sc = new Scanner(System.in);
+		int random = (int) ((Math.random() * 10000) + 1);
+		int count = 0;
+		int result = 0;
+		while(true) {
+			
+			System.out.println("입력 >>> ");
+			result = sc.nextInt();
+			count++;
+			
+			if(result < 1 || result > 10000) {
+				count--;
+				System.out.println("다시 입력하시오.");
+			}else if(result > random) {
+				System.out.println("Down!");
+			}else if(result < random){
+				System.out.println("up!");
+			}else if(result == random) {
+				System.out.println("정답. 총 " + count + "번만에 성공.");
+				break;
+			}
+		}
 	}
 	
 	// 문제3. 자동으로 진행되는 윷 던지기를 구현하시오. 윷이나 모가 나오면 추가로 던지시오.
@@ -187,7 +221,7 @@ public class MainClass {
 	}
 	
 	public static void main(String[] args) {
-		ex10();
+		ex02();
 	}
 
 }

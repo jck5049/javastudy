@@ -74,7 +74,7 @@ public class MainClass {
 			byte[] b = str.getBytes(StandardCharsets.UTF_8);
 			
 			// getBytes(String charsetName)		java 1.1부터 사용가능
-			// byte[] b = str.getBytes("UTF_8")
+			// byte[] b = str.getBytes("UTF_8");
 			
 			fos.write(b);
 			
@@ -177,7 +177,7 @@ public class MainClass {
 		
 		// 객체를 그대로 출력하는 ObjectOutputStream
 		
-		File dir = new File("C: " + File.separator + "storage");
+		File dir = new File("C:" + File.separator + "storage");
 		File file = new File(dir, "ex05.dat");
 		
 		ObjectOutputStream oos = null;
@@ -199,6 +199,9 @@ public class MainClass {
 			person.setHeight(170.5);
 			person.setAlive(false);
 			
+			// 출력
+			oos.writeObject(people);
+			oos.writeObject(person);
 			
 		}catch(IOException e) {
 			e.printStackTrace();
@@ -211,19 +214,11 @@ public class MainClass {
 				e.printStackTrace();
 			}
 		}
-		
-		
 		System.out.println("ex05.dat 파일의 크기 : " + file.length() + "바이트");
-		
 	}
-	
-	
-	
-	
-	
 	public static void main(String[] args) {
 		
-		ex04();
+		ex05();
 		
 	}
 
