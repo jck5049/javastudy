@@ -62,7 +62,7 @@ public class MainClass {
 				System.out.println("정답. 총 " + count + "번만에 성공.");
 				break;
 			}
-		}
+		}sc.close();
 	}
 	
 	// 문제3. 자동으로 진행되는 윷 던지기를 구현하시오. 윷이나 모가 나오면 추가로 던지시오.
@@ -74,7 +74,32 @@ public class MainClass {
 	// "모", "윷", "도", 10칸 이동한다.
 	public static void ex03() {
 		
-	}
+		String[] str = {"", "도", "개", "걸","윷","모"};
+		
+		int count = 0;
+		
+		while(true) {
+			
+			int result = (int) (Math.random() * 5) + 1;
+			System.out.print("\"" + str[result] + "\"");
+				count += result;
+			if(result <= 3) {
+				System.out.println(", " + count + "칸 이동한다.");
+				break;
+			}else {
+				System.out.print(", ");
+				
+			}
+			
+				
+			
+			}
+			
+		}
+		
+		
+		
+	
 	
 	// 문제4. 0~9 사이 난수를 100개 생성하시오.
 	// 발생한 0~9 사이의 각 난수들이 생성된 횟수(빈도수)를 그래프화 하여 출력하시오.
@@ -90,6 +115,16 @@ public class MainClass {
 	// 8 : ####### 7
 	// 9 : ########### 11
 	public static void ex04() {
+		
+		int[] arr = new int[100];
+		int[] ten = new int[10];
+		
+		for(int i = 0; i < arr.length; i++) {
+			arr[i] = (int)(Math.random() * 10);
+			ten[arr[i]]++;
+		}
+		
+		
 		
 	}
 	
@@ -130,7 +165,11 @@ public class MainClass {
 	// 오답
 	public static void ex06() {
 		
+		
+		
+		
 	}
+	
 	
 	// 문제7. 다음 순서에 따라서 5 x 5 형태의 숫자 빙고판을 자동으로 생성하시오.
 	// 지시사항)
@@ -153,7 +192,12 @@ public class MainClass {
 
 	public static void ex07() {
 		
+		
+		
+		
+		
 	}
+	
 	
 	// 문제8. 대문자와 소문자와 숫자로 구성된 인증번호를 만드시오.
 	// 사용자로부터 몇 자리의 인증번호를 만들것인지 입력 받아서 처리하시오.
@@ -162,6 +206,9 @@ public class MainClass {
 	// 몇 자리의 인증번호를 생성할까요? >>> 6
 	// 생성된 6자리 인증번호는 Fa013b입니다.
 	public static void ex08() {
+		
+		
+		
 		
 	}
 	
@@ -221,7 +268,7 @@ public class MainClass {
 	}
 	
 	public static void main(String[] args) {
-		ex02();
+		ex04();
 	}
 
 }
