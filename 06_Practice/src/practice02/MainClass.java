@@ -88,19 +88,11 @@ public class MainClass {
 				break;
 			}else {
 				System.out.print(", ");
-				
 			}
-			
-				
-			
-			}
-			
 		}
+	}
 		
-		
-		
-	
-	
+
 	// 문제4. 0~9 사이 난수를 100개 생성하시오.
 	// 발생한 0~9 사이의 각 난수들이 생성된 횟수(빈도수)를 그래프화 하여 출력하시오.
 	// 예시)
@@ -117,14 +109,20 @@ public class MainClass {
 	public static void ex04() {
 		
 		int[] arr = new int[100];
-		int[] ten = new int[10];
+		int[] count = new int[10];
 		
 		for(int i = 0; i < arr.length; i++) {
 			arr[i] = (int)(Math.random() * 10);
-			ten[arr[i]]++;
+			count[arr[i]]++;
 		}
-		
-		
+		for(int i = 0; i < count.length; i++) {
+			StringBuilder sb = new StringBuilder();
+			for(int j = 0; j < count[i]; j++) {
+				sb.append("#");
+			}
+			String str = sb.toString();
+			System.out.println(i + " : " + str + " " + count[i]);
+		}
 		
 	}
 	
@@ -150,8 +148,33 @@ public class MainClass {
 	// 상철 70   71   73   214	
 	// 합계 180  183  189  552	
 	public static void ex05() {
-		
-	}
+		Scanner sc = new Scanner(System.in);
+		String[] name1 = {"정숙", "미희", "상철", "합계"};
+		String[] name2 = {"국어", "영어", "수학", "총점"};
+		int[][] total = new int[name1.length][name2.length];
+		for(int i = 0; i < total.length - 1; i++) {
+			for(int j = 0; j < total[i].length -1; j++) {
+				System.out.println(name1[i] + "의 " + name2[j] + " 점수 >>> ");
+				total[i][j] = sc.nextInt();
+				total[i][name2.length - 1] += total[i][j];
+				total[name1.length -1][j] += total[i][j];
+				total[name1.length -1][name2.length - 1] += total[i][j];
+				
+			}
+				
+		}
+		System.out.print("\n\t");
+		for (int i = 0; i < name2.length; i++) {
+			System.out.print(name2[i] + "\t");
+		}
+		System.out.println();
+		for (int i = 0; i < total.length; i++) {
+			System.out.print(name1[i] + "\t");
+			for(int j = 0; j < total.length; j++) {
+				System.out.print(total[i][j] + "\t");
+			}System.out.println();
+		}sc.close();
+	}	
 	
 	// 문제6. 4계절이 저장되어 있는 영한 사전(2차원 배열)을 이용하여 문제를 해결하시오.
 	// 예시)
@@ -165,7 +188,38 @@ public class MainClass {
 	// 오답
 	public static void ex06() {
 		
+		Scanner sc = new Scanner(System.in);
+		String abc = "";
+		String[][] result = {
+				{"봄", "spring"},
+				{"여름", "summer"},
+				{"가을", "fall"},
+				{"겨울", "winter"}
+		};
 		
+		while(true) {
+			int rand = (int)(Math.random() * 4);
+			System.out.println(result[rand][0] + "을 영어로 하면? >>> ");
+			abc = sc.next();
+			
+			if(abc.equals("spring")) {
+				System.out.println("정답");
+				break;
+			}else if(abc.equals("summer")) {
+				System.out.println("정답");
+				break;
+			}else if(abc.equals("fall")) {
+				System.out.println("정답");
+				break;
+			}else if(abc.equals("winter")) {
+				System.out.println("정답");
+				break;
+			}else {
+				System.out.println("오답");
+			}
+			
+		}
+		sc.close();
 		
 		
 	}
@@ -268,7 +322,7 @@ public class MainClass {
 	}
 	
 	public static void main(String[] args) {
-		ex04();
+		ex05();
 	}
 
 }

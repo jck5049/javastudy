@@ -112,12 +112,14 @@ public class JSONMainClass {
 			StringBuilder sb = new StringBuilder();
 			while((line = reader.readLine()) != null) {
 				sb.append(line);
+				System.out.println(line);
 			}
 			
 			reader.close();
 			con.disconnect();
 			
 			JSONArray items = new JSONObject(sb.toString())
+					
 								.getJSONObject("response")
 								.getJSONObject("body")
 								.getJSONArray("items");
@@ -137,6 +139,9 @@ public class JSONMainClass {
 		
 		
 	}
+	
+	
+	
 	
 	
 	

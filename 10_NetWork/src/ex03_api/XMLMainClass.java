@@ -38,8 +38,10 @@ public class XMLMainClass {
 		
 		try {
 			apiURL += "?serviceKey=" + URLEncoder.encode(serviceKey, "UTF-8");	// GET방식
+			//http://openapi.airport.co.kr/service/rest/AirportCodeList/getAirportCodeList?serviceKey=rmk119MGF/Xqg2wLlk7F4b1v/XNTmQLfGyvheu/djqpyfvh+xAqjfrEwEH1mDZaEKrNRAoETYudkyVjVHCiBRw==
 			url = new URL(apiURL);
-			con = (HttpURLConnection) url.openConnection();
+			
+			con =  (HttpURLConnection) url.openConnection();
 			
 			con.setRequestMethod("GET");	
 			con.setRequestProperty("Content-Type", "application/xml; charset=UTF-8");	

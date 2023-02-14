@@ -211,7 +211,15 @@ public class gd {
 		
 		
 		
+	public static void ex06() {
 		
+		var str = "이체할 금액 300원 , 이체한 금액 300원" ;
+		System.out.println(str.indexOf("3"));
+		System.out.println(str.indexOf("3", 10));
+		System.out.println(str.lastIndexOf("3"));
+		System.out.println(str.lastIndexOf("3", 10));
+		System.out.println(str.indexOf("5"));
+	}
 		
 	
 	
@@ -221,7 +229,7 @@ public class gd {
 	
 	public static void main(String[] args) {
 		
-		ex01();
+		ex06();
 		
 		
 		

@@ -234,6 +234,10 @@ public class MainClass {
 	// 변환 후 파일명 = happy_1658792128410.jpg
 	public static void ex09() {
 		
+		
+		
+		
+		
 	}
 	
 	// 문제10. Scanner 클래스의 next() 메소드를 이용해서 사람 이름을 입력 받은 뒤
@@ -247,10 +251,50 @@ public class MainClass {
 	// 처음 뵙겠습니다
 	public static void ex10() {
 		
+		String[] friend = {"정우성", "장동건", "현빈"};
+		
+		String name = "";
+		Scanner sc = new Scanner(System.in);
+		System.out.println("이름을 입력하시오 >>> ");
+		name = sc.next();
+		
+		for(int i = 0; i < friend.length; i++) {
+			if(friend[i].equals(name)) {
+				System.out.println("반갑다 친구야");
+				break;
+			}else {
+				System.out.println("처음 뵙겠습니다.");
+				break;
+			}
+			
+			
+		}
+		
+		
+		/*
+		 풀이 2.
+		 
+		while(true) {
+			
+			System.out.println("이름을 입력하시오 >>> ");
+			String name = sc.next();
+			if(name.equals("정우성")) {
+				System.out.println("반갑다 친구야");
+				break;
+			}else {
+				System.out.println("처음 뵙겠습니다.");
+			}
+			
+			
+		}
+		sc.close();
+		
+		 */
+		
 	}
 	
 	public static void main(String[] args) {
-		ex06();
+		ex10();
 	}
 
 }
