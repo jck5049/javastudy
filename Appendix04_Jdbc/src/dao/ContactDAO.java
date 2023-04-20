@@ -187,34 +187,35 @@ public class ContactDAO {
 	
 	
 	
+	
 	// CRUD 메소드 - 4 (연락처 수정하기)
-	// 1. 반환값 	: 0(실패) 또는 1(성공)
-	// 2. 매개변수	: ContactDTO contact 객체에는 연락처 정보(name, tel, email, address)가 모두 저장되어 있다.
+	// 1. 반환값   : 0(실패) 또는 1(성공)
+	// 2. 매개변수 : ContactDTO contact 객체에는 연락처 정보(name, tel, email, address)가 모두 저장되어 있다.
 	public int updateContact(ContactDTO contact) {
-		
-		try {
 			
-			con = getConnection();
-			sql = "UPDATE CONTACT_TBL";
-			sql += " SET NAME = ?, TEL = ?, EAMIL = ?, ADDRESS = ?";
-			sql += " WHERE CONTACT_NO = ?";
-			ps = con.prepareStatement(sql);
-			ps.setString(1, contact.getName());
-			ps.setString(2, contact.getTel());
-			ps.setString(3, contact.getEmail());
-			ps.setString(4, contact.getAddress());
-			ps.setInt(5, contact.getContact_no());
+			try {
+				
+				con = getConnection();
+				sql  = "UPDATE CONTACT_TBL";
+				sql += "   SET NAME = ?, TEL = ?, EMAIL = ?, ADDRESS = ?";
+				sql += " WHERE CONTACT_NO = ?";
+				ps = con.prepareStatement(sql);
+				ps.setString(1, contact.getName());
+				ps.setString(2, contact.getTel());
+				ps.setString(3, contact.getEmail());
+				ps.setString(4, contact.getAddress());
+				ps.setInt(5, contact.getContact_no());
+				res = ps.executeUpdate();
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				close();
+			}
 			
-			res = ps.executeUpdate();
+			return res;
 			
-		}catch(Exception e) {
-			e.printStackTrace();
-		}finally {
-			close();
 		}
-		
-		return res;
-	}
 	
 	
 	

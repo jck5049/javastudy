@@ -48,7 +48,7 @@ public class Ex02_advanced_for {
 	
 	public static void main(String[] args) {
 		// 
-              ex02();
+              ex01();
 	}
 
 }

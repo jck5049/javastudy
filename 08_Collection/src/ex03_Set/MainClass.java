@@ -114,7 +114,7 @@ public class MainClass {
 	
 	public static void main(String[] args) {
 		
-		ex06();
+		ex03();
 		
 	}
 

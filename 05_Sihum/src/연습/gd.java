@@ -224,12 +224,21 @@ public class gd {
 	
 	
 	
+	public static void ex07() {
+		
+		char ch = 'h';
+		
+		char a = ch * 3;
+		
+	}
+	
+	
 	
 	
 	
 	public static void main(String[] args) {
 		
-		ex06();
+		ex07();
 		
 		
 		

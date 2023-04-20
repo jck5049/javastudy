@@ -158,7 +158,7 @@ public class Ex04_switch {
 	
 	public static void main(String[] args) {
 		
-		ex05();
+		ex03();
 		
 	}
 
